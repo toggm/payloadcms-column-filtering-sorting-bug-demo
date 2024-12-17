@@ -69,6 +69,9 @@ export interface Person {
   firstName?: string | null;
   lastName?: string | null;
   position?: string | null;
+  internal?: {
+    owner?: (number | null) | User;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -178,6 +181,11 @@ export interface PersonsSelect<T extends boolean = true> {
   firstName?: T;
   lastName?: T;
   position?: T;
+  internal?:
+    | T
+    | {
+        owner?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

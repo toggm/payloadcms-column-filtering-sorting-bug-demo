@@ -48,5 +48,17 @@ export const Persons: CollectionConfig = {
       required: false,
       index: true,
     },
+    {
+      name: 'internal',
+      type: 'group',
+      fields: [
+        {
+          name: 'owner',
+          type: 'relationship',
+          relationTo: 'users',
+          hasMany: false,
+        },
+      ],
+    },
   ],
 }
